@@ -1,41 +1,58 @@
-# Kube-Archive
+![Status](https://img.shields.io/badge/status-experimental-orange.svg)
+![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
+![Kubernetes](https://img.shields.io/badge/k8s-unconventional-lightgrey.svg)
 
-Kube-Archive is a public collection of unconventional Kubernetes
-experiments focused on running historically significant or architecturally
-interesting computer systems inside modern cluster environments.
+## Overview
 
-The goal is not to simulate workloads with toy scripts, but to deploy
-actual operating systems, emulators, flight software, and other real
-compute artifacts as reproducible workloads on Kubernetes.
+Kube-Archive is an exploration into what happens when modern container
+orchestration meets historically significant or architecturally interesting
+compute systems. Instead of microservices or cloud apps, it deploys early UNIX
+variants, mainframe environments, aerospace flight software, and other
+non-traditional workloads on Kubernetes.
 
-## Motivation
+The goal is not to simulate these systems with toy scripts, but to run the
+actual software stacks — complete with their original operating assumptions,
+interfaces, and behaviors — inside a reproducible and observable environment.
 
-Most Kubernetes examples focus on cloud apps or microservices. Kube-Archive
-explores the opposite direction: "What else can a cluster run?"
+## Why Kubernetes?
 
-This includes:
+Kubernetes provides several properties that make it an unexpectedly useful
+platform for this kind of archival and experimental computing:
 
-- vintage operating systems and mainframe environments
-- aerospace flight software frameworks
-- microcontroller and mission systems
-- early UNIX research artifacts
-- unusual CPU architectures
-- distributed or time-dilated compute
+**1. Reproducibility**
 
-## Repository Layout
+Historical environments often require fragile build chains or emulator stacks.
+Containerizing them makes the full system reproducible for future users without
+depending on a specific workstation or OS.
 
-- `Cluster/` — local cluster configs (kind, k3d, k8s, etc.)
-- `Common/` — base images, shared Helm charts, utilities
-- `Experiments/` — individual unconventional deployments
-- `Docs/` — design notes, conventions, and roadmap
+**2. Isolation**
 
-Each experiment lives under `Experiments/<Name>/` and includes:
+Vintage software and flight systems were rarely designed for modern networked
+multi-user environments. Kubernetes isolates them safely while still allowing
+controlled interaction.
 
-- Dockerfile + emulator/FSW configs
-- Kubernetes manifests
-- optional Helm chart
-- README explaining purpose & usage
+**3. Deployment Semantics**
 
-## Status
+Many flight software and archival systems assume distinct “nodes” or “stations”
+(e.g., ground computers, mission controllers, instrument hosts). Kubernetes maps
+this concept cleanly with Deployments, StatefulSets, and Services.
 
-Early stage — contributions and strange ideas welcome.
+**4. Distributed Testing**
+
+Some aerospace and distributed compute systems were intended to be tested with
+multiple participants. K8s allows scaling and orchestration of multi-node
+experiments without bespoke lab hardware.
+
+**5. Observability & Instrumentation**
+
+Metrics, logs, traces, network behavior, and stdout/stderr are all first-class
+citizens. This lets researchers study these systems with modern tooling.
+
+**6. Hardware Abstraction**
+
+Kubernetes gives us a consistent substrate to run PDP-11 emulators, AGC
+interpreters, mainframe simulators, or NASA flight frameworks without caring
+about the underlying workstation.
+
+In short: Kubernetes provides a standardized test bench for both the software
+and the system-level behaviors we want to preserve, explore, and understand.
