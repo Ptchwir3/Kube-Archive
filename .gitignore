@@ -1,0 +1,29 @@
+# Build artifacts / images
+*.img
+*.dsk
+*.tap
+*.bin
+*.iso
+*.qcow2
+*.rom
+*.o
+*.out
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Node / frontend (if you ever add dashboards)
+node_modules/
+dist/
+build/
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Helm
+charts/

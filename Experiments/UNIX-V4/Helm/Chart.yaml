@@ -1,0 +1,6 @@
+apiVersion: v2
+name: unix-v4
+description: Run Research UNIX V4 on a PDP-11 emulator in Kubernetes
+type: application
+version: 0.1.0
+appVersion: "1973"
