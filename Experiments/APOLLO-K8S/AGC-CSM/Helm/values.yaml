@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: ptchwir3/apollo-agc-csm
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 1969
+
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "500m"
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

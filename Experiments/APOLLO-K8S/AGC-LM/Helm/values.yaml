@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: ptchwir3/apollo-agc-lm
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 1969
+  nodePort: 31969
+
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "500m"
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

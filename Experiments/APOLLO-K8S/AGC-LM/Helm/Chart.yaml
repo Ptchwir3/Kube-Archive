@@ -1,0 +1,6 @@
+apiVersion: v2
+name: apollo-agc-lm
+description: Apollo Guidance Computer - Lunar Module (Luminary099)
+type: application
+version: 0.1.0
+appVersion: "1969"

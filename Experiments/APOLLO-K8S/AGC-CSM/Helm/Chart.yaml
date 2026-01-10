@@ -1,0 +1,6 @@
+apiVersion: v2
+name: apollo-agc-csm
+description: Apollo Guidance Computer - Command/Service Module (Colossus249)
+type: application
+version: 0.1.0
+appVersion: "1969"
