@@ -1,16 +1,103 @@
-# Third-Party Licensing Notice
+Third-Party Licenses and Provenance
 
-This experiment may reference historical software created by third parties.
+This document records third-party components and provenance information for the UNIX Version 4 experiment in the Kube-Archive project.
 
-No proprietary ROMs, firmware images, disk/tape images, or binaries are included
-in this repository. All referenced artifacts must be acquired from their
-official or permitted sources.
+No UNIX source code, binaries, disk images, tapes, or ROMs are included in this repository.
 
-Provenance Example:
-- Name:
-- Version:
-- Year:
-- Original Author / Institution:
-- License Status:
-- Acquisition Source:
-- Notes:
+
+---
+
+SIMH Emulator
+
+Project: SIMH
+
+Source: https://github.com/simh/simh
+
+License: MIT
+
+Copyright: Copyright (c) 1993–2024 The SIMH Authors
+
+SIMH is used to emulate historically accurate PDP-11 hardware required to run Research UNIX Version 4.
+
+
+---
+
+Debian GNU/Linux
+
+Project: Debian GNU/Linux
+
+Source: https://www.debian.org
+
+License: Various (GPL, LGPL, MIT, BSD, and others)
+
+Debian is used as the base operating system for the container image providing the runtime environment for SIMH.
+
+
+---
+
+Research UNIX Version 4 (Provenance)
+
+Name: Research UNIX Version 4
+
+Version: UNIX V4
+
+Year: 1973
+
+Original Author / Institution: AT&T Bell Laboratories
+
+Original Hardware Platform: DEC PDP-11 (RK05 disk subsystem)
+
+License Status: Proprietary (historical research use) © AT&T Bell Laboratories
+
+Acquisition Source: User-supplied media obtained from legitimate archival or research collections (e.g., university archives, licensed historical UNIX distributions, or legally cleared research copies).
+
+Accepted Media Formats:
+
+RK05 disk images (e.g., .dsk)
+
+PDP-11 compatible SIMH disk formats
+
+
+Expected Runtime Path:
+
+/data/unixv4.dsk
+
+Notes:
+
+This repository does not distribute UNIX V4 media in any form.
+
+SIMH provides its own bootstrapping mechanisms and does not require proprietary ROMs.
+
+Emulator configuration reflects historically accurate PDP-11 hardware appropriate for UNIX V4.
+
+This experiment exists solely for educational, archival, and historical research purposes.
+
+
+
+---
+
+Legal and Ethical Notice
+
+Users are responsible for ensuring that any UNIX V4 media they supply:
+
+Was obtained from a lawful source
+
+Is used in compliance with applicable licenses and institutional agreements
+
+Is not redistributed in violation of copyright
+
+
+This repository intentionally separates emulation infrastructure from copyrighted historical software artifacts.
+
+
+---
+
+Archival Intent
+
+The UNIX-V4 experiment within Kube-Archive exists to:
+
+Preserve historical computing environments using modern, reproducible tooling
+
+Demonstrate containerized and Kubernetes-based execution of legacy systems
+
+Maintain strict legal, ethical, and archival boundaries around proprietary historical software
